@@ -1,2 +1,350 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Richard's Portfolio</title><link href="/" rel="alternate"></link><link href="/feeds/richard-thomas.atom.xml" rel="self"></link><id>/</id><updated>2016-04-11T15:00:00-04:00</updated><entry><title>Reproducible Research</title><link href="/coursera-data-science/reproducible-research/" rel="alternate"></link><published>2016-04-11T15:00:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/reproducible-research/</id><summary type="html">&lt;p&gt;Fifth Course of the Data Science Specialization&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category><category term="data analysis"></category></entry><entry><title>Exploratory Data Analysis</title><link href="/coursera-data-science/exploratory-data-analysis/" rel="alternate"></link><published>2016-04-11T14:45:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/exploratory-data-analysis/</id><summary type="html">&lt;p&gt;Fourth course of the Data Science Specialization&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category><category term="data analysis"></category></entry><entry><title>Getting and Cleaning Data</title><link href="/coursera-data-science/getting-and-cleaning-data/" rel="alternate"></link><published>2016-04-11T14:30:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/getting-and-cleaning-data/</id><summary type="html">&lt;p&gt;Third course of the Data Science Specialization&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category></entry><entry><title>R Programming</title><link href="/coursera-data-science/r-programming/" rel="alternate"></link><published>2016-04-11T14:15:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/r-programming/</id><summary type="html">&lt;p&gt;Second course of the Data Science Specialization&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category></entry><entry><title>The Data Scientist's Toolbox</title><link href="/coursera-data-science/the-data-scientists-toolbox/" rel="alternate"></link><published>2016-04-11T14:00:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/the-data-scientists-toolbox/</id><summary type="html">&lt;p&gt;First course of the Data Science Specialization&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Richard's Portfolio</title><link href="/" rel="alternate"></link><link href="/feeds/richard-thomas.atom.xml" rel="self"></link><id>/</id><updated>2016-07-15T15:00:00-04:00</updated><entry><title>Statistical Inference</title><link href="//Statistical_Inference.html" rel="alternate"></link><published>2016-07-15T15:00:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:Statistical_Inference.html,2016-07-15:</id><summary type="html">&lt;h2 id="course-description"&gt;Course Description&lt;/h2&gt;
+&lt;p&gt;Statistical inference is the process of drawing conclusions about populations or scientific truths from data.
+There are many modes of performing inference including statistical modeling, data oriented strategies and explicit use of designs and randomization in analyses.
+Furthermore, there are broad theories (frequentists, Bayesian, likelihood, design based, …) and numerous complexities (missing data, observed and unobserved confounding, biases) for performing inference.
+A practitioner can often be left in a debilitating maze of techniques, philosophies and nuance. This course presents the fundamentals of inference in a practical approach for getting things done.
+After taking this course, students will understand the broad directions of statistical inference and use this information for making informed choices in analyzing data.&lt;/p&gt;
+&lt;h2 id="course-certificate"&gt;&lt;a href="https://www.coursera.org/account/accomplishments/records/53374UBBJLP2" title="My Certificate"&gt;Course Certificate&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I achieved a grade of 100.0% in this course.&lt;/p&gt;
+&lt;h2 id="course-project-part-1"&gt;Course Project: Part 1&lt;/h2&gt;
+&lt;h3 id="overview"&gt;Overview&lt;/h3&gt;
+&lt;p&gt;In the first part of the course project I will investigate the
+exponential distribution in R and compare it with the Central Limit
+Theorem. I will investigate the distribution of averages of 40
+exponentials over one thousand simulations.&lt;/p&gt;
+&lt;p&gt;There are three parts to the assignment:&lt;br /&gt;
+1. Show the sample mean and compare it to the theoretical mean of the
+distribution.&lt;br /&gt;
+2. Show how variable the sample is (via variance) and compare it to the
+theoretical variance of the distribution.&lt;br /&gt;
+3. Show that the distribution is approximately normal.&lt;/p&gt;
+&lt;h3 id="simulations"&gt;Simulations&lt;/h3&gt;
+&lt;p&gt;In this section, I simulate the exponential distribution in R. The
+simulation will calculate the mean of 40 randomly generated observations
+from the exponential distribution, and repeat this simulation 1000
+times.&lt;/p&gt;
+&lt;p&gt;The R code below will produce a sample of 1000 means:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#set variables per the assignment instructions&lt;/span&gt;
+lambda &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="m"&gt;0.2&lt;/span&gt;
+exponentials &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="m"&gt;40&lt;/span&gt;
+simulations &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="m"&gt;1000&lt;/span&gt;
+
+&lt;span class="c1"&gt;#set the seed for random variables&lt;/span&gt;
+&lt;span class="kp"&gt;set.seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2016&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;#sample exponential distribution, run the simulation 1000 times&lt;/span&gt;
+sample_means &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;NULL&lt;/span&gt;
+&lt;span class="kr"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;i &lt;span class="kr"&gt;in&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;simulations&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    sample_means &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;sample_means&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;rexp&lt;span class="p"&gt;(&lt;/span&gt;exponentials&lt;span class="p"&gt;,&lt;/span&gt; lambda&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="sample-mean-versus-theoretical-mean"&gt;Sample Mean versus Theoretical Mean&lt;/h3&gt;
+&lt;p&gt;The Theoretical mean of the distribution can be calculated by 1/lamba,
+while the sample mean is calculated by taking the mean of results of the
+1000 simulations.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#the theoretical mean is:&lt;/span&gt;
+theoretical_mean &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;lambda
+
+&lt;span class="c1"&gt;#the sample mean is:&lt;/span&gt;
+sample_mean &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;sample_means&lt;span class="p"&gt;),&lt;/span&gt; digits &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The results of the means can be seen in the following table:&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;Table 1: Comparison of Theoretical and Sample Mean&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr class="header"&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Mean&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class="odd"&gt;
+&lt;td&gt;Theoretical&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td&gt;Sample&lt;/td&gt;
+&lt;td&gt;4.979&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As shown, the sample mean (4.979) is very close to the theoretical mean
+(5) of the distribution.&lt;/p&gt;
+&lt;h3 id="sample-variance-versus-theoretical-variance"&gt;Sample Variance versus Theoretical Variance&lt;/h3&gt;
+&lt;p&gt;The theoretical variance of the distribution can be calculated by
+$\frac{1/lamba^2}{n}$, and the theoretical standard deviation is the
+square root of the variance.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#calculate the theoretical variance and standard deviation&lt;/span&gt;
+theoretical_var &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;lambda&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;exponentials&lt;span class="p"&gt;,&lt;/span&gt; digits &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+theoretical_sd &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;sqrt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;theoretical_var&lt;span class="p"&gt;),&lt;/span&gt; digits &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The variance and standard deviation of the sample is calculated in R:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#the sample variance is&lt;/span&gt;
+sample_var &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;var&lt;span class="p"&gt;(&lt;/span&gt;sample_means&lt;span class="p"&gt;),&lt;/span&gt; digits &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#the sample standard deviation is&lt;/span&gt;
+sample_sd &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;sd&lt;span class="p"&gt;(&lt;/span&gt;sample_means&lt;span class="p"&gt;),&lt;/span&gt; digits &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And the results can be seen in the following table:&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;Table 2: Comparison of the Variance of the Sample and Theoretical Variance of the Distribution&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr class="header"&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Variance&lt;/th&gt;
+&lt;th&gt;Standard Deviation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class="odd"&gt;
+&lt;td&gt;Theoretical&lt;/td&gt;
+&lt;td&gt;0.625&lt;/td&gt;
+&lt;td&gt;0.791&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td&gt;Sample&lt;/td&gt;
+&lt;td&gt;0.638&lt;/td&gt;
+&lt;td&gt;0.799&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Similar to the mean, the sample variation and standard deviation are
+close to the values of the theoretical variance and standard deviation
+of the distribution.&lt;/p&gt;
+&lt;h3 id="distribution"&gt;Distribution&lt;/h3&gt;
+&lt;p&gt;The sample distribution is compared with the normal distribution in the
+below graph:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pelican" src="/images/statistical_inference/code6-1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;In conclusion, the sample distribution is approximately normal, as the
+shape closely follows that of the normal distribution. It is
+approximately centered around the sample mean, which as shown
+previously, is very close to the theoretical mean of the distribution.
+As a result, the distribution of means of 40 exponentials does behave as
+predicted by the Central Limit Theorem.&lt;/p&gt;
+&lt;h2 id="course-project-part-2"&gt;Course Project: Part 2&lt;/h2&gt;
+&lt;h3 id="overview_1"&gt;Overview&lt;/h3&gt;
+&lt;p&gt;In the second part of the assignment I will investigate the ToothGrowth
+data and perform some exploratory data analysis.&lt;/p&gt;
+&lt;p&gt;The assignment contains four parts:&lt;br /&gt;
+1. Load the ToothGrowth data and perform some basic exploratory data
+analyses&lt;br /&gt;
+2. Provide a basic summary of the data&lt;br /&gt;
+3. Use confidence intervals and/or hypothesis tests to compare tooth
+growth by supp and dose.&lt;br /&gt;
+4. State your conclusions and the assumptions needed for your
+conclusions.&lt;/p&gt;
+&lt;h3 id="loading-the-data-and-exploratory-analysis"&gt;Loading the Data and Exploratory Analysis&lt;/h3&gt;
+&lt;p&gt;Looking at the help file for the ToothGrowth dataset, we can see it
+contains data on the effects of Vitamin C on the change in tooth length
+for 60 guinea pigs. The data contains 3 variables: len (tooth length),
+supp (supplement type), and dose (dose in mg/day).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#load data&lt;/span&gt;
+toothgrowth &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; ToothGrowth
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After loading the data, I looked at how many observations there were for
+each supplement type and dose:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;table1 &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;data.frame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;toothgrowth &lt;span class="o"&gt;%&amp;gt;%&lt;/span&gt; count&lt;span class="p"&gt;(&lt;/span&gt;supp&lt;span class="p"&gt;,&lt;/span&gt; dose&lt;span class="p"&gt;))&lt;/span&gt;
+table1
+
+&lt;span class="c1"&gt;##   supp dose  n&lt;/span&gt;
+&lt;span class="c1"&gt;## 1   OJ  0.5 10&lt;/span&gt;
+&lt;span class="c1"&gt;## 2   OJ  1.0 10&lt;/span&gt;
+&lt;span class="c1"&gt;## 3   OJ  2.0 10&lt;/span&gt;
+&lt;span class="c1"&gt;## 4   VC  0.5 10&lt;/span&gt;
+&lt;span class="c1"&gt;## 5   VC  1.0 10&lt;/span&gt;
+&lt;span class="c1"&gt;## 6   VC  2.0 10&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There is an even split, with 10 guinea pigs observed for each
+combination of supplement type and dose.&lt;/p&gt;
+&lt;p&gt;I then looked at the relationship between dose and tooth length for each
+supplement type by plotting both all observations and the mean length
+for each dose.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pelican" src="/images/statistical_inference/code10-1.png" /&gt;&lt;/p&gt;
+&lt;h3 id="basic-summary-of-data"&gt;Basic Summary of Data&lt;/h3&gt;
+&lt;p&gt;I looked at the summary for all of the ToothGrowth data, as well as the
+summary by each supplement type.&lt;/p&gt;
+&lt;p&gt;Figure 1: Summary of ToothGrowth Dataset&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;summary(toothgrowth)
+
+##       len        supp         dose      
+##  Min.   : 4.20   OJ:30   Min.   :0.500  
+##  1st Qu.:13.07   VC:30   1st Qu.:0.500  
+##  Median :19.25           Median :1.000  
+##  Mean   :18.81           Mean   :1.167  
+##  3rd Qu.:25.27           3rd Qu.:2.000  
+##  Max.   :33.90           Max.   :2.000
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Figure 2: Summary for Supplement type "OJ"&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;summary(filter(toothgrowth, supp == &amp;quot;OJ&amp;quot;))
+
+##       len        supp         dose      
+##  Min.   : 8.20   OJ:30   Min.   :0.500  
+##  1st Qu.:15.53   VC: 0   1st Qu.:0.500  
+##  Median :22.70           Median :1.000  
+##  Mean   :20.66           Mean   :1.167  
+##  3rd Qu.:25.73           3rd Qu.:2.000  
+##  Max.   :30.90           Max.   :2.000
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Figure 3: Summary for Supplement type "VC"&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;summary(filter(toothgrowth, supp == &amp;quot;VC&amp;quot;))
+
+##       len        supp         dose      
+##  Min.   : 4.20   OJ: 0   Min.   :0.500  
+##  1st Qu.:11.20   VC:30   1st Qu.:0.500  
+##  Median :16.50           Median :1.000  
+##  Mean   :16.96           Mean   :1.167  
+##  3rd Qu.:23.10           3rd Qu.:2.000  
+##  Max.   :33.90           Max.   :2.000
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As can be seen in Figures 1, 2 and 3 above, the mean tooth length is
+higher for supplement type OJ (20.66) compared to supplment type VC
+(16.96), while the overall mean tooth length was 18.81.&lt;/p&gt;
+&lt;p&gt;The minimum lengh for supplement type OJ(8.2) was almost twice the
+minimum for VC(4.2). However, VC did have the highest maximum length of
+33.9, compared to maximum of 30.9 for OJ.&lt;/p&gt;
+&lt;p&gt;In general, OJ appears to have longer tooth lengths, as all of the 1st
+quartile, mean, and 3rd quartile are higher than those for VC. However,
+as shown in the graph in the previous section, the differences are most
+notable at dose levels of 0.5 and 0.1. The greatest change in tooth
+growth appears to be at the highest dose of 2, and the effects seem
+similar for both supplement types.&lt;/p&gt;
+&lt;h3 id="hypothesis-testing"&gt;Hypothesis Testing&lt;/h3&gt;
+&lt;p&gt;The first hypothesis test will look at the effect of supplement type on
+tooth growth, and the results can be seen below.&lt;/p&gt;
+&lt;p&gt;Figure 4: Hypothesis Test 1 - Effects of supplment type on tooth length&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;t.test(len ~ supp, data = toothgrowth)
+
+## 
+##  Welch Two Sample t-test
+## 
+## data:  len by supp
+## t = 1.9153, df = 55.309, p-value = 0.06063
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.1710156  7.5710156
+## sample estimates:
+## mean in group OJ mean in group VC 
+##         20.66333         16.96333
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As the p-value (0.06063) is greater than 0.05, the supplement type does
+not have a statistically significant effect on the change in tooth
+growth in guinea pigs.&lt;/p&gt;
+&lt;p&gt;The second set of hypothesis tests will explore the effect of dose on
+tooth growth. I split the sample into 3 groups, one for each dose level,
+and compared each group to each other.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#group 1: compare dose of 0.5 and 1&lt;/span&gt;
+group1 &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; filter&lt;span class="p"&gt;(&lt;/span&gt;toothgrowth&lt;span class="p"&gt;,&lt;/span&gt; dose &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#group 2: compare dose of 0.5 and 2&lt;/span&gt;
+group2 &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; filter&lt;span class="p"&gt;(&lt;/span&gt;toothgrowth&lt;span class="p"&gt;,&lt;/span&gt; dose &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#group3: compare dose of 1 and 2&lt;/span&gt;
+group3 &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; filter&lt;span class="p"&gt;(&lt;/span&gt;toothgrowth&lt;span class="p"&gt;,&lt;/span&gt; dose &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="m"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The results for these hypothesis tests are shown below.&lt;/p&gt;
+&lt;p&gt;Figure 5: Hypothesis Test 2 - Effects of dose level on tooth length&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Group 1: Dose of 0.5 and 1
+t.test(len ~ dose, data = group1)
+
+## 
+##  Welch Two Sample t-test
+## 
+## data:  len by dose
+## t = -6.4766, df = 37.986, p-value = 1.268e-07
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -11.983781  -6.276219
+## sample estimates:
+## mean in group 0.5   mean in group 1 
+##            10.605            19.735
+
+# Group 2: Dose of 0.5 and 2
+t.test(len ~ dose, data = group2)
+
+## 
+##  Welch Two Sample t-test
+## 
+## data:  len by dose
+## t = -11.799, df = 36.883, p-value = 4.398e-14
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -18.15617 -12.83383
+## sample estimates:
+## mean in group 0.5   mean in group 2 
+##            10.605            26.100
+
+# Group 3: Dose of 1 and 2
+t.test(len ~ dose, data = group3)
+
+## 
+##  Welch Two Sample t-test
+## 
+## data:  len by dose
+## t = -4.9005, df = 37.101, p-value = 1.906e-05
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -8.996481 -3.733519
+## sample estimates:
+## mean in group 1 mean in group 2 
+##          19.735          26.100
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;All of the p-values are extremely small (1.268e-07, 4.398e-14,
+1.906e-05) which indicates that the dose level has a statistically
+significant effect on tooth growth. A higher dose level corresponds to a
+greater increase in tooth length.&lt;/p&gt;
+&lt;h3 id="conclusions"&gt;Conclusions&lt;/h3&gt;
+&lt;p&gt;The results of the hypothesis tests show that supplement type does not
+have statistically significant impact on the change in tooth length. The
+second set of hypothesis tests showed that the dose level did have
+statistically significant influence on tooth growth. Guinea pigs that
+received higher dose levels had a greater increase in tooth length.&lt;/p&gt;
+&lt;p&gt;The assumptions required for these conclusions are that the sample was
+independent and randomly selected. For the sample to be independent, 60
+guinea pigs would have had to been selected. Lastly, it is assumed the
+data are normally distributed for the t-tests to be meaningful.&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category><category term="data analysis"></category></entry><entry><title>Reproducible Research</title><link href="/coursera-data-science/reproducible-research/" rel="alternate"></link><published>2016-04-11T15:00:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/reproducible-research/</id><summary type="html">&lt;h1 id="reproducible-research"&gt;Reproducible Research&lt;/h1&gt;
+&lt;h2 id="course-description"&gt;Course Description&lt;/h2&gt;
+&lt;p&gt;This course focuses on the concepts and tools behind reporting modern data analyses in a reproducible manner. Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them.  The need for reproducibility is increasing dramatically as data analyses become more complex, involving larger datasets and more sophisticated computations. Reproducibility allows for people to focus on the actual content of a data analysis, rather than on superficial details reported in a written summary. In addition, reproducibility makes an analysis more useful to others because the data and code that actually conducted the analysis are available. This course will focus on literate statistical analysis tools which allow one to publish data analyses in a single document that allows others to easily execute the same analysis to obtain the same results.&lt;/p&gt;
+&lt;h2 id="course-certificate"&gt;&lt;a href="https://www.coursera.org/account/accomplishments/records/T9HYPJSS7J4R" title="My Certificate"&gt;Course Certificate&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I achieved a grade of 100.0% in this course.&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category><category term="data analysis"></category></entry><entry><title>Exploratory Data Analysis</title><link href="/coursera-data-science/exploratory-data-analysis/" rel="alternate"></link><published>2016-04-11T14:45:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/exploratory-data-analysis/</id><summary type="html">&lt;h1 id="exploratory-data-analysis"&gt;Exploratory Data Analysis&lt;/h1&gt;
+&lt;h2 id="course-description"&gt;Course Description&lt;/h2&gt;
+&lt;p&gt;This course covers the essential exploratory techniques for summarizing data. These techniques are typically applied before formal modeling commences and can help inform the development of more complex statistical models. Exploratory techniques are also important for eliminating or sharpening potential hypotheses about the world that can be addressed by the data. We will cover in detail the plotting systems in R as well as some of the basic principles of constructing data graphics. We will also cover some of the common multivariate statistical techniques used to visualize high-dimensional data.&lt;/p&gt;
+&lt;h2 id="course-certificate"&gt;&lt;a href="https://www.coursera.org/account/accomplishments/records/QpbuzUZBu3ZFrTsy" title="My Certificate"&gt;Course Certificate&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I achieved a grade of 100.0% in this course.&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category><category term="data analysis"></category></entry><entry><title>Getting and Cleaning Data</title><link href="/coursera-data-science/getting-and-cleaning-data/" rel="alternate"></link><published>2016-04-11T14:30:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/getting-and-cleaning-data/</id><summary type="html">&lt;h1 id="getting-and-cleaning-data"&gt;Getting and Cleaning Data&lt;/h1&gt;
+&lt;h2 id="course-description"&gt;Course Description&lt;/h2&gt;
+&lt;p&gt;Before you can work with data you have to get some. This course will cover the basic ways that data can be obtained. The course will cover obtaining data from the web, from APIs, from databases and from colleagues in various formats. It will also cover the basics of data cleaning and how to make data “tidy”. Tidy data dramatically speed downstream data analysis tasks. The course will also cover the components of a complete data set including raw data, processing instructions, codebooks, and processed data. The course will cover the basics needed for collecting, cleaning, and sharing data.&lt;/p&gt;
+&lt;h2 id="course-certificate"&gt;&lt;a href="https://www.coursera.org/account/accomplishments/records/ee5QAMBVvjj6AsRz" title="My Certificate"&gt;Course Certificate&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I achieved a grade of 100.0% in this course.&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category></entry><entry><title>R Programming</title><link href="/coursera-data-science/r-programming/" rel="alternate"></link><published>2016-04-11T14:15:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/r-programming/</id><summary type="html">&lt;h1 id="r-programming"&gt;R Programming&lt;/h1&gt;
+&lt;h2 id="course-description"&gt;Course Description&lt;/h2&gt;
+&lt;p&gt;In this course you will learn how to program in R and how to use R for effective data analysis. You will learn how to install and configure software necessary for a statistical programming environment and describe generic programming language concepts as they are implemented in a high-level statistical language. The course covers practical issues in statistical computing which includes programming in R, reading data into R, accessing R packages, writing R functions, debugging, profiling R code, and organizing and commenting R code. Topics in statistical data analysis will provide working examples.&lt;/p&gt;
+&lt;h2 id="course-certificate"&gt;&lt;a href="https://www.coursera.org/account/accomplishments/records/MEqaDMDR3mMVAc52" title="My Certificate"&gt;Course Certificate&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I achieved a grade of 100.0% in this course.&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category></entry><entry><title>The Data Scientist's Toolbox</title><link href="/coursera-data-science/the-data-scientists-toolbox/" rel="alternate"></link><published>2016-04-11T14:00:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/the-data-scientists-toolbox/</id><summary type="html">&lt;h1 id="the-data-scientists-toolbox"&gt;The Data Scientist's Toolbox&lt;/h1&gt;
+&lt;p&gt;This is the first course in the Data Science Specialization by John Hopkins University on Coursera.
+I completed this course in July 2015.&lt;/p&gt;
+&lt;h2 id="course-description"&gt;Course Description&lt;/h2&gt;
+&lt;p&gt;In this course you will get an introduction to the main tools and ideas in the data scientist's toolbox. The course gives an overview of the data, questions, and tools that data analysts and data scientists work with. There are two components to this course. The first is a conceptual introduction to the ideas behind turning data into actionable knowledge. The second is a practical introduction to the tools that will be used in the program like version control, markdown, git, GitHub, R, and RStudio.&lt;/p&gt;
+&lt;h2 id="course-certificate"&gt;&lt;a href="https://www.coursera.org/account/accomplishments/records/ESudha7SR4Dm3VKw" title="My Certificate"&gt;Course Certificate&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I achieved a grade of 100.0% in this course.&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category></entry></feed>

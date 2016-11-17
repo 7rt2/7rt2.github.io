@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Statistical Inference - Richard's Portfolio</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/images/favicon.png" rel="icon">
+
+<link rel="canonical" href="//Statistical_Inference.html">
+
+        <meta name="author" content="Richard Thomas" />
+        <meta name="keywords" content="coursera,data science,data analysis" />
+        <meta name="description" content="The Sixth Course in the Coursera Data Science Specialization" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.cosmo.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+        <link href="/static/custom.css" rel="stylesheet">
+
+
+</head>
+<body>
+<!-- <script src="/theme/js/jquery.min.js"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+<img src="/images/logo.png" width="32"/> Richard's Portfolio            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="/about.html">
+                             About
+                          </a></li>
+                        <li class="active">
+                            <a href="/category/coursera-data-science.html">Coursera data science</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <div class="well well-sm">
+              <!-- <div class="panel-heading"> -->
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-07-15T15:00:00-04:00"> Fri 15 July 2016</time>
+    </span>
+
+        <span class="label label-default">Category</span>
+        <a href="/category/coursera-data-science.html">Coursera Data Science</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tags/coursera.html">coursera</a>
+        /
+	<a href="/tags/data-science.html">data science</a>
+        /
+	<a href="/tags/data-analysis.html">data analysis</a>
+    
+</footer><!-- /.post-info -->              <!-- </div> -->
+            </div>
+            <h1 class="entry-title">
+                <a href="//Statistical_Inference.html"
+                rel="bookmark"
+                title="Permalink to Statistical Inference">
+                    Statistical Inference
+                </a>
+            </h1>
+
+            <div class="entry-content">
+                <h2 id="course-description">Course Description</h2>
+<p>Statistical inference is the process of drawing conclusions about populations or scientific truths from data.
+There are many modes of performing inference including statistical modeling, data oriented strategies and explicit use of designs and randomization in analyses.
+Furthermore, there are broad theories (frequentists, Bayesian, likelihood, design based, …) and numerous complexities (missing data, observed and unobserved confounding, biases) for performing inference.
+A practitioner can often be left in a debilitating maze of techniques, philosophies and nuance. This course presents the fundamentals of inference in a practical approach for getting things done.
+After taking this course, students will understand the broad directions of statistical inference and use this information for making informed choices in analyzing data.</p>
+<h2 id="course-certificate"><a href="https://www.coursera.org/account/accomplishments/records/53374UBBJLP2" title="My Certificate">Course Certificate</a></h2>
+<p>I achieved a grade of 100.0% in this course.</p>
+<h2 id="course-project-part-1">Course Project: Part 1</h2>
+<h3 id="overview">Overview</h3>
+<p>In the first part of the course project I will investigate the
+exponential distribution in R and compare it with the Central Limit
+Theorem. I will investigate the distribution of averages of 40
+exponentials over one thousand simulations.</p>
+<p>There are three parts to the assignment:<br />
+1. Show the sample mean and compare it to the theoretical mean of the
+distribution.<br />
+2. Show how variable the sample is (via variance) and compare it to the
+theoretical variance of the distribution.<br />
+3. Show that the distribution is approximately normal.</p>
+<h3 id="simulations">Simulations</h3>
+<p>In this section, I simulate the exponential distribution in R. The
+simulation will calculate the mean of 40 randomly generated observations
+from the exponential distribution, and repeat this simulation 1000
+times.</p>
+<p>The R code below will produce a sample of 1000 means:</p>
+<div class="highlight"><pre><span></span><span class="c1">#set variables per the assignment instructions</span>
+lambda <span class="o">&lt;-</span> <span class="m">0.2</span>
+exponentials <span class="o">&lt;-</span> <span class="m">40</span>
+simulations <span class="o">&lt;-</span> <span class="m">1000</span>
+
+<span class="c1">#set the seed for random variables</span>
+<span class="kp">set.seed</span><span class="p">(</span><span class="m">2016</span><span class="p">)</span>
+
+<span class="c1">#sample exponential distribution, run the simulation 1000 times</span>
+sample_means <span class="o">=</span> <span class="kc">NULL</span>
+<span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>simulations<span class="p">)</span> <span class="p">{</span>
+    sample_means <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span>sample_means<span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rexp<span class="p">(</span>exponentials<span class="p">,</span> lambda<span class="p">)))</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="sample-mean-versus-theoretical-mean">Sample Mean versus Theoretical Mean</h3>
+<p>The Theoretical mean of the distribution can be calculated by 1/lamba,
+while the sample mean is calculated by taking the mean of results of the
+1000 simulations.</p>
+<div class="highlight"><pre><span></span><span class="c1">#the theoretical mean is:</span>
+theoretical_mean <span class="o">&lt;-</span> <span class="m">1</span><span class="o">/</span>lambda
+
+<span class="c1">#the sample mean is:</span>
+sample_mean <span class="o">&lt;-</span> <span class="kp">round</span><span class="p">(</span><span class="kp">mean</span><span class="p">(</span>sample_means<span class="p">),</span> digits <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The results of the means can be seen in the following table:</p>
+<table>
+<caption>Table 1: Comparison of Theoretical and Sample Mean</caption>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Theoretical</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Sample</td>
+<td>4.979</td>
+</tr>
+</tbody>
+</table>
+
+<p>As shown, the sample mean (4.979) is very close to the theoretical mean
+(5) of the distribution.</p>
+<h3 id="sample-variance-versus-theoretical-variance">Sample Variance versus Theoretical Variance</h3>
+<p>The theoretical variance of the distribution can be calculated by
+$\frac{1/lamba^2}{n}$, and the theoretical standard deviation is the
+square root of the variance.</p>
+<div class="highlight"><pre><span></span><span class="c1">#calculate the theoretical variance and standard deviation</span>
+theoretical_var <span class="o">&lt;-</span> <span class="kp">round</span><span class="p">(</span><span class="m">1</span><span class="o">/</span>lambda<span class="o">^</span><span class="m">2</span><span class="o">/</span>exponentials<span class="p">,</span> digits <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+theoretical_sd <span class="o">&lt;-</span> <span class="kp">round</span><span class="p">(</span><span class="kp">sqrt</span><span class="p">(</span>theoretical_var<span class="p">),</span> digits <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The variance and standard deviation of the sample is calculated in R:</p>
+<div class="highlight"><pre><span></span><span class="c1">#the sample variance is</span>
+sample_var <span class="o">&lt;-</span> <span class="kp">round</span><span class="p">(</span>var<span class="p">(</span>sample_means<span class="p">),</span> digits <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+<span class="c1">#the sample standard deviation is</span>
+sample_sd <span class="o">&lt;-</span> <span class="kp">round</span><span class="p">(</span>sd<span class="p">(</span>sample_means<span class="p">),</span> digits <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+
+
+<p>And the results can be seen in the following table:</p>
+<table>
+<caption>Table 2: Comparison of the Variance of the Sample and Theoretical Variance of the Distribution</caption>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Variance</th>
+<th>Standard Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Theoretical</td>
+<td>0.625</td>
+<td>0.791</td>
+</tr>
+<tr class="even">
+<td>Sample</td>
+<td>0.638</td>
+<td>0.799</td>
+</tr>
+</tbody>
+</table>
+
+<p>Similar to the mean, the sample variation and standard deviation are
+close to the values of the theoretical variance and standard deviation
+of the distribution.</p>
+<h3 id="distribution">Distribution</h3>
+<p>The sample distribution is compared with the normal distribution in the
+below graph:</p>
+<p><img alt="Pelican" src="/images/statistical_inference/code6-1.png" /></p>
+<p>In conclusion, the sample distribution is approximately normal, as the
+shape closely follows that of the normal distribution. It is
+approximately centered around the sample mean, which as shown
+previously, is very close to the theoretical mean of the distribution.
+As a result, the distribution of means of 40 exponentials does behave as
+predicted by the Central Limit Theorem.</p>
+<h2 id="course-project-part-2">Course Project: Part 2</h2>
+<h3 id="overview_1">Overview</h3>
+<p>In the second part of the assignment I will investigate the ToothGrowth
+data and perform some exploratory data analysis.</p>
+<p>The assignment contains four parts:<br />
+1. Load the ToothGrowth data and perform some basic exploratory data
+analyses<br />
+2. Provide a basic summary of the data<br />
+3. Use confidence intervals and/or hypothesis tests to compare tooth
+growth by supp and dose.<br />
+4. State your conclusions and the assumptions needed for your
+conclusions.</p>
+<h3 id="loading-the-data-and-exploratory-analysis">Loading the Data and Exploratory Analysis</h3>
+<p>Looking at the help file for the ToothGrowth dataset, we can see it
+contains data on the effects of Vitamin C on the change in tooth length
+for 60 guinea pigs. The data contains 3 variables: len (tooth length),
+supp (supplement type), and dose (dose in mg/day).</p>
+<div class="highlight"><pre><span></span><span class="c1">#load data</span>
+toothgrowth <span class="o">&lt;-</span> ToothGrowth
+</pre></div>
+
+
+<p>After loading the data, I looked at how many observations there were for
+each supplement type and dose:</p>
+<div class="highlight"><pre><span></span>table1 <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>toothgrowth <span class="o">%&gt;%</span> count<span class="p">(</span>supp<span class="p">,</span> dose<span class="p">))</span>
+table1
+
+<span class="c1">##   supp dose  n</span>
+<span class="c1">## 1   OJ  0.5 10</span>
+<span class="c1">## 2   OJ  1.0 10</span>
+<span class="c1">## 3   OJ  2.0 10</span>
+<span class="c1">## 4   VC  0.5 10</span>
+<span class="c1">## 5   VC  1.0 10</span>
+<span class="c1">## 6   VC  2.0 10</span>
+</pre></div>
+
+
+<p>There is an even split, with 10 guinea pigs observed for each
+combination of supplement type and dose.</p>
+<p>I then looked at the relationship between dose and tooth length for each
+supplement type by plotting both all observations and the mean length
+for each dose.</p>
+<p><img alt="Pelican" src="/images/statistical_inference/code10-1.png" /></p>
+<h3 id="basic-summary-of-data">Basic Summary of Data</h3>
+<p>I looked at the summary for all of the ToothGrowth data, as well as the
+summary by each supplement type.</p>
+<p>Figure 1: Summary of ToothGrowth Dataset</p>
+<div class="highlight"><pre><span></span>summary(toothgrowth)
+
+##       len        supp         dose      
+##  Min.   : 4.20   OJ:30   Min.   :0.500  
+##  1st Qu.:13.07   VC:30   1st Qu.:0.500  
+##  Median :19.25           Median :1.000  
+##  Mean   :18.81           Mean   :1.167  
+##  3rd Qu.:25.27           3rd Qu.:2.000  
+##  Max.   :33.90           Max.   :2.000
+</pre></div>
+
+
+<p>Figure 2: Summary for Supplement type "OJ"</p>
+<div class="highlight"><pre><span></span>summary(filter(toothgrowth, supp == &quot;OJ&quot;))
+
+##       len        supp         dose      
+##  Min.   : 8.20   OJ:30   Min.   :0.500  
+##  1st Qu.:15.53   VC: 0   1st Qu.:0.500  
+##  Median :22.70           Median :1.000  
+##  Mean   :20.66           Mean   :1.167  
+##  3rd Qu.:25.73           3rd Qu.:2.000  
+##  Max.   :30.90           Max.   :2.000
+</pre></div>
+
+
+<p>Figure 3: Summary for Supplement type "VC"</p>
+<div class="highlight"><pre><span></span>summary(filter(toothgrowth, supp == &quot;VC&quot;))
+
+##       len        supp         dose      
+##  Min.   : 4.20   OJ: 0   Min.   :0.500  
+##  1st Qu.:11.20   VC:30   1st Qu.:0.500  
+##  Median :16.50           Median :1.000  
+##  Mean   :16.96           Mean   :1.167  
+##  3rd Qu.:23.10           3rd Qu.:2.000  
+##  Max.   :33.90           Max.   :2.000
+</pre></div>
+
+
+<p>As can be seen in Figures 1, 2 and 3 above, the mean tooth length is
+higher for supplement type OJ (20.66) compared to supplment type VC
+(16.96), while the overall mean tooth length was 18.81.</p>
+<p>The minimum lengh for supplement type OJ(8.2) was almost twice the
+minimum for VC(4.2). However, VC did have the highest maximum length of
+33.9, compared to maximum of 30.9 for OJ.</p>
+<p>In general, OJ appears to have longer tooth lengths, as all of the 1st
+quartile, mean, and 3rd quartile are higher than those for VC. However,
+as shown in the graph in the previous section, the differences are most
+notable at dose levels of 0.5 and 0.1. The greatest change in tooth
+growth appears to be at the highest dose of 2, and the effects seem
+similar for both supplement types.</p>
+<h3 id="hypothesis-testing">Hypothesis Testing</h3>
+<p>The first hypothesis test will look at the effect of supplement type on
+tooth growth, and the results can be seen below.</p>
+<p>Figure 4: Hypothesis Test 1 - Effects of supplment type on tooth length</p>
+<div class="highlight"><pre><span></span>t.test(len ~ supp, data = toothgrowth)
+
+## 
+##  Welch Two Sample t-test
+## 
+## data:  len by supp
+## t = 1.9153, df = 55.309, p-value = 0.06063
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.1710156  7.5710156
+## sample estimates:
+## mean in group OJ mean in group VC 
+##         20.66333         16.96333
+</pre></div>
+
+
+<p>As the p-value (0.06063) is greater than 0.05, the supplement type does
+not have a statistically significant effect on the change in tooth
+growth in guinea pigs.</p>
+<p>The second set of hypothesis tests will explore the effect of dose on
+tooth growth. I split the sample into 3 groups, one for each dose level,
+and compared each group to each other.</p>
+<div class="highlight"><pre><span></span><span class="c1">#group 1: compare dose of 0.5 and 1</span>
+group1 <span class="o">&lt;-</span> filter<span class="p">(</span>toothgrowth<span class="p">,</span> dose <span class="o">&lt;</span> <span class="m">2</span><span class="p">)</span>
+<span class="c1">#group 2: compare dose of 0.5 and 2</span>
+group2 <span class="o">&lt;-</span> filter<span class="p">(</span>toothgrowth<span class="p">,</span> dose <span class="o">!=</span> <span class="m">1</span><span class="p">)</span>
+<span class="c1">#group3: compare dose of 1 and 2</span>
+group3 <span class="o">&lt;-</span> filter<span class="p">(</span>toothgrowth<span class="p">,</span> dose <span class="o">&gt;</span> <span class="m">0.5</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The results for these hypothesis tests are shown below.</p>
+<p>Figure 5: Hypothesis Test 2 - Effects of dose level on tooth length</p>
+<div class="highlight"><pre><span></span># Group 1: Dose of 0.5 and 1
+t.test(len ~ dose, data = group1)
+
+## 
+##  Welch Two Sample t-test
+## 
+## data:  len by dose
+## t = -6.4766, df = 37.986, p-value = 1.268e-07
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -11.983781  -6.276219
+## sample estimates:
+## mean in group 0.5   mean in group 1 
+##            10.605            19.735
+
+# Group 2: Dose of 0.5 and 2
+t.test(len ~ dose, data = group2)
+
+## 
+##  Welch Two Sample t-test
+## 
+## data:  len by dose
+## t = -11.799, df = 36.883, p-value = 4.398e-14
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -18.15617 -12.83383
+## sample estimates:
+## mean in group 0.5   mean in group 2 
+##            10.605            26.100
+
+# Group 3: Dose of 1 and 2
+t.test(len ~ dose, data = group3)
+
+## 
+##  Welch Two Sample t-test
+## 
+## data:  len by dose
+## t = -4.9005, df = 37.101, p-value = 1.906e-05
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -8.996481 -3.733519
+## sample estimates:
+## mean in group 1 mean in group 2 
+##          19.735          26.100
+</pre></div>
+
+
+<p>All of the p-values are extremely small (1.268e-07, 4.398e-14,
+1.906e-05) which indicates that the dose level has a statistically
+significant effect on tooth growth. A higher dose level corresponds to a
+greater increase in tooth length.</p>
+<h3 id="conclusions">Conclusions</h3>
+<p>The results of the hypothesis tests show that supplement type does not
+have statistically significant impact on the change in tooth length. The
+second set of hypothesis tests showed that the dose level did have
+statistically significant influence on tooth growth. Guinea pigs that
+received higher dose levels had a greater increase in tooth length.</p>
+<p>The assumptions required for these conclusions are that the sample was
+independent and randomly selected. For the sample to be independent, 60
+guinea pigs would have had to been selected. Lastly, it is assumed the
+data are normally distributed for the t-tests to be meaningful.</p>
+            </div>
+            <!-- /.entry-content -->
+
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="http://github.com/7rt2"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+                <li class="list-group-item"><a href="https://ca.linkedin.com/in/richardsthomas"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
+              </ul>
+            </li>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="//Statistical_Inference.html">
+                            Statistical Inference
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/coursera-data-science/reproducible-research/">
+                            Reproducible Research
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/coursera-data-science/exploratory-data-analysis/">
+                            Exploratory Data Analysis
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/coursera-data-science/getting-and-cleaning-data/">
+                            Getting and Cleaning Data
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/coursera-data-science/r-programming/">
+                            R Programming
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="list-group-item"><a href="/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+        <!--     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://www.fangraphs.com/" target="_blank">
+                Fangraphs
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://puckalytics.com/" target="_blank">
+                Puckalytics
+            </a>
+        </li>
+      </ul>
+    </li>
+ -->
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="well well-lg" id="footer-well">
+      <div class="container">
+      <div class="row">
+           <div class="col-sm-4">
+               <div id="RecentComments" class="dsq-widget">
+                <h3 style="margin-bottom:0.5px;">Recent Comments</h3>
+                <script type="text/javascript" src="http://.disqus.com/recent_comments_widget.js?num_items=5&hide_mods=0&hide_avatars=0&avatar_size=32&excerpt_length=100"></script>
+               </div>
+
+           </div>
+           <div class="col-sm-4">
+               <h3 style="margin-bottom:0.5px;">Websites I Like</h3>
+               </br>
+               <ul style="list-style-type:circle">
+                <div style="margin-bottom: 10.5px; margin-top: 10.5px; font-size: 19px;">
+                  <li>
+                    <a href="http://www.fangraphs.com/" target="_blank">
+                        Fangraphs
+                    </a>
+                  </li>
+                <div>
+                <div style="margin-bottom: 10.5px; margin-top: 10.5px; font-size: 19px;">
+                  <li>
+                    <a href="https://puckalytics.com/" target="_blank">
+                        Puckalytics
+                    </a>
+                  </li>
+                <div>
+              </ul>
+
+             <!-- // <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+              <!-- <g:plusone size="standard(bubble)" data-href="http://the-data-show.com"></g:plusone> -->
+              <br>
+              <h3>Share BeneathData</h3>
+                <div class="addthis_toolbox addthis_default_style addthis_32x32_style" addthis:url="" addthis:title="Check out Richard's Portfolio!">
+                  <a class="addthis_button_facebook"></a>
+                  <a class="addthis_button_twitter"></a>
+                  <a class="addthis_button_google_plusone_share"></a>
+                  <a class="addthis_button_email"></a>
+                  <a class="addthis_button_linkedin"></a>
+                  <a class="addthis_button_rss_follow" addthis:userid="/feeds/all.atom.xml"></a>
+                  <a class="addthis_button_compact"></a>
+                </div>
+                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid="></script>
+           </div>
+           <div class="col-sm-4">
+<div id="aboutme" align="center">
+	<h3 style="margin-bottom:0.5px;">About Richard Thomas</h3><br/>
+        <p>
+            <img width="60%" class="img-thumbnail" src="/images/newheadshot.png"/>
+        </p>
+    <p> 
+        I'm an analyst with a passion for data and learning. I enjoy programming and am an avid sports fan.<p>You can contact me <a href="http://www.google.com/recaptcha/mailhide/d?k=01jdphN_FVzDh6s23Ri9nGgA==&amp;c=cX6v1aazogkuPJK149kMNraIDYZtkKblF-b5aiVFOY8=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k=01jdphN_FVzDh6s23Ri9nGgA==&c=cX6v1aazogkuPJK149kMNraIDYZtkKblF-b5aiVFOY8=', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Reveal this e-mail address"><strong>here</strong>.</a></p>
+    </p>
+</div>
+           </div>
+      </div>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 Richard Thomas
+            &middot; Powered by <a href="http://python.org/" target="_blank">Python</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            a customized <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            and <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+   </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+<!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
+<!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
+<script src="/theme/js/href_scroll.js"></script>
+
+
+</body>
+</html>
