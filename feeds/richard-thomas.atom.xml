@@ -56,31 +56,33 @@ sample_mean &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;
 
 
 &lt;p&gt;The results of the means can be seen in the following table:&lt;/p&gt;
-&lt;table&gt;
-&lt;caption&gt;Table 1: Comparison of Theoretical and Sample Mean&lt;/caption&gt;
-&lt;thead&gt;
-&lt;tr class="header"&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th&gt;Mean&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class="odd"&gt;
-&lt;td&gt;Theoretical&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class="even"&gt;
-&lt;td&gt;Sample&lt;/td&gt;
-&lt;td&gt;4.979&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;div class="container"&gt;
+  &lt;h3&gt;Table 1: Comparison of Theoretical and Sample Mean&lt;/h3&gt;
+    &lt;table class="table table-striped"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Type&lt;/th&gt;
+        &lt;th&gt;Mean&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Theoretical&lt;/td&gt;
+        &lt;td&gt;5.000&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Sample&lt;/td&gt;
+        &lt;td&gt;4.979&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;As shown, the sample mean (4.979) is very close to the theoretical mean
 (5) of the distribution.&lt;/p&gt;
 &lt;h3 id="sample-variance-versus-theoretical-variance"&gt;Sample Variance versus Theoretical Variance&lt;/h3&gt;
 &lt;p&gt;The theoretical variance of the distribution can be calculated by
-$\frac{1/lamba^2}{n}$, and the theoretical standard deviation is the
+&lt;span class="math"&gt;\(\frac{1/lamba^2}{n}\)&lt;/span&gt;, and the theoretical standard deviation is the
 square root of the variance.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#calculate the theoretical variance and standard deviation&lt;/span&gt;
 theoretical_var &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;lambda&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;exponentials&lt;span class="p"&gt;,&lt;/span&gt; digits &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -97,28 +99,30 @@ sample_sd &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;ro
 
 
 &lt;p&gt;And the results can be seen in the following table:&lt;/p&gt;
-&lt;table&gt;
-&lt;caption&gt;Table 2: Comparison of the Variance of the Sample and Theoretical Variance of the Distribution&lt;/caption&gt;
-&lt;thead&gt;
-&lt;tr class="header"&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th&gt;Variance&lt;/th&gt;
-&lt;th&gt;Standard Deviation&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class="odd"&gt;
-&lt;td&gt;Theoretical&lt;/td&gt;
-&lt;td&gt;0.625&lt;/td&gt;
-&lt;td&gt;0.791&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class="even"&gt;
-&lt;td&gt;Sample&lt;/td&gt;
-&lt;td&gt;0.638&lt;/td&gt;
-&lt;td&gt;0.799&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;div class="container"&gt;
+  &lt;h3&gt;Table 2: Comparison of the Variance of the Sample and Theoretical Variance of the Distribution&lt;/h3&gt;
+    &lt;table class="table table-striped"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Type&lt;/th&gt;
+            &lt;th&gt;Variance&lt;/th&gt;
+            &lt;th&gt;Standard Deviation&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Theoretical&lt;/td&gt;
+            &lt;td&gt;0.625&lt;/td&gt;
+            &lt;td&gt;0.791&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Sample&lt;/td&gt;
+            &lt;td&gt;0.638&lt;/td&gt;
+            &lt;td&gt;0.799&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Similar to the mean, the sample variation and standard deviation are
 close to the values of the theoretical variance and standard deviation
@@ -221,8 +225,8 @@ summary by each supplement type.&lt;/p&gt;
 &lt;p&gt;As can be seen in Figures 1, 2 and 3 above, the mean tooth length is
 higher for supplement type OJ (20.66) compared to supplment type VC
 (16.96), while the overall mean tooth length was 18.81.&lt;/p&gt;
-&lt;p&gt;The minimum lengh for supplement type OJ(8.2) was almost twice the
-minimum for VC(4.2). However, VC did have the highest maximum length of
+&lt;p&gt;The minimum lengh for supplement type OJ (8.2) was almost twice the
+minimum for VC (4.2). However, VC did have the highest maximum length of
 33.9, compared to maximum of 30.9 for OJ.&lt;/p&gt;
 &lt;p&gt;In general, OJ appears to have longer tooth lengths, as all of the 1st
 quartile, mean, and 3rd quartile are higher than those for VC. However,
@@ -327,7 +331,64 @@ received higher dose levels had a greater increase in tooth length.&lt;/p&gt;
 &lt;p&gt;The assumptions required for these conclusions are that the sample was
 independent and randomly selected. For the sample to be independent, 60
 guinea pigs would have had to been selected. Lastly, it is assumed the
-data are normally distributed for the t-tests to be meaningful.&lt;/p&gt;</summary><category term="coursera"></category><category term="data science"></category><category term="data analysis"></category></entry><entry><title>Reproducible Research</title><link href="/coursera-data-science/reproducible-research/" rel="alternate"></link><published>2016-04-11T15:00:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/reproducible-research/</id><summary type="html">&lt;p&gt;This is the fifth course in the Data Science Specialization by John Hopkins University on Coursera.
+data are normally distributed for the t-tests to be meaningful.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><category term="coursera"></category><category term="data science"></category><category term="data analysis"></category></entry><entry><title>Reproducible Research</title><link href="/coursera-data-science/reproducible-research/" rel="alternate"></link><published>2016-04-11T15:00:00-04:00</published><author><name>Richard Thomas</name></author><id>tag:,2016-04-11:coursera-data-science/reproducible-research/</id><summary type="html">&lt;p&gt;This is the fifth course in the Data Science Specialization by John Hopkins University on Coursera.
 I completed this course in February 2015.&lt;/p&gt;
 &lt;h2 id="course-description"&gt;Course Description&lt;/h2&gt;
 &lt;p&gt;This course focuses on the concepts and tools behind reporting modern data analyses in a reproducible manner. Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them.  The need for reproducibility is increasing dramatically as data analyses become more complex, involving larger datasets and more sophisticated computations. Reproducibility allows for people to focus on the actual content of a data analysis, rather than on superficial details reported in a written summary. In addition, reproducibility makes an analysis more useful to others because the data and code that actually conducted the analysis are available. This course will focus on literate statistical analysis tools which allow one to publish data analyses in a single document that allows others to easily execute the same analysis to obtain the same results.&lt;/p&gt;

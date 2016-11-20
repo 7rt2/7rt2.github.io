@@ -155,31 +155,33 @@ sample_mean <span class="o">&lt;-</span> <span class="kp">round</span><span clas
 
 
 <p>The results of the means can be seen in the following table:</p>
-<table>
-<caption>Table 1: Comparison of Theoretical and Sample Mean</caption>
-<thead>
-<tr class="header">
-<th>Type</th>
-<th>Mean</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Theoretical</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>Sample</td>
-<td>4.979</td>
-</tr>
-</tbody>
-</table>
+<div class="container">
+  <h3>Table 1: Comparison of Theoretical and Sample Mean</h3>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Mean</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Theoretical</td>
+        <td>5.000</td>
+      </tr>
+      <tr>
+        <td>Sample</td>
+        <td>4.979</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <p>As shown, the sample mean (4.979) is very close to the theoretical mean
 (5) of the distribution.</p>
 <h3 id="sample-variance-versus-theoretical-variance">Sample Variance versus Theoretical Variance</h3>
 <p>The theoretical variance of the distribution can be calculated by
-$\frac{1/lamba^2}{n}$, and the theoretical standard deviation is the
+<span class="math">\(\frac{1/lamba^2}{n}\)</span>, and the theoretical standard deviation is the
 square root of the variance.</p>
 <div class="highlight"><pre><span></span><span class="c1">#calculate the theoretical variance and standard deviation</span>
 theoretical_var <span class="o">&lt;-</span> <span class="kp">round</span><span class="p">(</span><span class="m">1</span><span class="o">/</span>lambda<span class="o">^</span><span class="m">2</span><span class="o">/</span>exponentials<span class="p">,</span> digits <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
@@ -196,28 +198,30 @@ sample_sd <span class="o">&lt;-</span> <span class="kp">round</span><span class=
 
 
 <p>And the results can be seen in the following table:</p>
-<table>
-<caption>Table 2: Comparison of the Variance of the Sample and Theoretical Variance of the Distribution</caption>
-<thead>
-<tr class="header">
-<th>Type</th>
-<th>Variance</th>
-<th>Standard Deviation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Theoretical</td>
-<td>0.625</td>
-<td>0.791</td>
-</tr>
-<tr class="even">
-<td>Sample</td>
-<td>0.638</td>
-<td>0.799</td>
-</tr>
-</tbody>
-</table>
+<div class="container">
+  <h3>Table 2: Comparison of the Variance of the Sample and Theoretical Variance of the Distribution</h3>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Variance</th>
+            <th>Standard Deviation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Theoretical</td>
+            <td>0.625</td>
+            <td>0.791</td>
+        </tr>
+        <tr>
+            <td>Sample</td>
+            <td>0.638</td>
+            <td>0.799</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
 
 <p>Similar to the mean, the sample variation and standard deviation are
 close to the values of the theoretical variance and standard deviation
@@ -320,8 +324,8 @@ summary by each supplement type.</p>
 <p>As can be seen in Figures 1, 2 and 3 above, the mean tooth length is
 higher for supplement type OJ (20.66) compared to supplment type VC
 (16.96), while the overall mean tooth length was 18.81.</p>
-<p>The minimum lengh for supplement type OJ(8.2) was almost twice the
-minimum for VC(4.2). However, VC did have the highest maximum length of
+<p>The minimum lengh for supplement type OJ (8.2) was almost twice the
+minimum for VC (4.2). However, VC did have the highest maximum length of
 33.9, compared to maximum of 30.9 for OJ.</p>
 <p>In general, OJ appears to have longer tooth lengths, as all of the 1st
 quartile, mean, and 3rd quartile are higher than those for VC. However,
@@ -427,6 +431,63 @@ received higher dose levels had a greater increase in tooth length.</p>
 independent and randomly selected. For the sample to be independent, 60
 guinea pigs would have had to been selected. Lastly, it is assumed the
 data are normally distributed for the t-tests to be meaningful.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
             </div>
             <!-- /.entry-content -->
 
