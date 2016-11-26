@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>data science - Richard's Portfolio</title>
+    <title>NHL Stats: Part 1 - Richard's Portfolio</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,16 +11,12 @@
 
     <link href="/images/favicon.png" rel="icon">
 
+<link rel="canonical" href="/sports-analysis/nhl-stats-part-1/">
 
-    <meta name="author" content="Richard Thomas" />
-    <meta name="keywords" content="data science" />
+        <meta name="author" content="Richard Thomas" />
+        <meta name="keywords" content="NHL,Sports,Data analysis" />
+        <meta name="description" content="My first look at advanced stats in hockey" />
 
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="Richard's Portfolio" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Richard's Portfolio"/>
-        <meta property="og:url" content=""/>
-        <meta property="og:description" content="Richard's Portfolio"/>
 
 
     <!-- Bootstrap -->
@@ -57,7 +53,7 @@
                         <li >
                             <a href="/category/coursera-data-science.html">Coursera data science</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="/category/sports-analysis.html">Sports analysis</a>
                         </li>
             </ul>
@@ -73,156 +69,90 @@
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="/coursera-data-science/statistical-inference/">Statistical Inference</a></h2>
-                    <div class="well well-sm">
+    <section id="content">
+        <article>
+            <div class="well well-sm">
+              <!-- <div class="panel-heading"> -->
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-07-15T15:00:00-04:00"> Fri 15 July 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-11-24T15:00:00-05:00"> Thu 24 November 2016</time>
     </span>
 
         <span class="label label-default">Category</span>
-        <a href="/category/coursera-data-science.html">Coursera Data Science</a>
+        <a href="/category/sports-analysis.html">Sports Analysis</a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="/tags/coursera.html">coursera</a>
+	<a href="/tags/nhl.html">NHL</a>
         /
-	<a href="/tags/data-science.html">data science</a>
+	<a href="/tags/sports.html">Sports</a>
         /
-	<a href="/tags/data-analysis.html">data analysis</a>
+	<a href="/tags/data-analysis.html">Data analysis</a>
     
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>The Sixth Course in the Coursera Data Science Specialization</p>
-                    <a class="btn btn-default btn-xs" href="/coursera-data-science/statistical-inference/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/coursera-data-science/reproducible-research/">Reproducible Research</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-11T15:00:00-04:00"> Mon 11 April 2016</time>
-    </span>
+</footer><!-- /.post-info -->              <!-- </div> -->
+            </div>
+            <h1 class="entry-title">
+                <a href="/sports-analysis/nhl-stats-part-1/"
+                rel="bookmark"
+                title="Permalink to NHL Stats: Part 1">
+                    NHL Stats: Part 1
+                </a>
+            </h1>
 
-        <span class="label label-default">Category</span>
-        <a href="/category/coursera-data-science.html">Coursera Data Science</a>
-
-
-<span class="label label-default">Tags</span>
-	<a href="/tags/coursera.html">coursera</a>
-        /
-	<a href="/tags/data-science.html">data science</a>
-        /
-	<a href="/tags/data-analysis.html">data analysis</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>The Fifth Course in the Data Science Specialization</p>
-                    <a class="btn btn-default btn-xs" href="/coursera-data-science/reproducible-research/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/coursera-data-science/exploratory-data-analysis/">Exploratory Data Analysis</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-11T14:45:00-04:00"> Mon 11 April 2016</time>
-    </span>
-
-        <span class="label label-default">Category</span>
-        <a href="/category/coursera-data-science.html">Coursera Data Science</a>
+            <div class="entry-content">
+                <h2 id="introduction">Introduction</h2>
+<p>Having read several articles on advanced stats in hockey, I decided I wanted to look into and investigate some of the data for myself. I will be looking at the relationship between some of the statistics, such as between Corsi and winning, and doing basic exploratory analysis of the data, to reproduce the results on my own.</p>
+<h2 id="data">Data</h2>
+<p>I downloaded 5v5 Team Stats data for all of the completed seasons from 2007-2008 to 2015-2016 from <a href="http://www.corsica.hockey" title="Corsica Hockey">Corsica Hockey</a> as well as the League Summary Team Statistics for the same seasons from <a href="http://www.hockey-reference.com" title="Hockey Reference">Hockey Reference</a>.</p>
+<p>Using R, I merged these two datasets together based on the season and team names, giving me a dataframe with a total of 270 rows (30 teams x 9s seasons) and 75 columns of various statistics.</p>
+<div class="highlight"><pre><span></span><span class="kp">names</span><span class="p">(</span>nhl_data<span class="p">)</span>
+</pre></div>
 
 
-<span class="label label-default">Tags</span>
-	<a href="/tags/coursera.html">coursera</a>
-        /
-	<a href="/tags/data-science.html">data science</a>
-        /
-	<a href="/tags/data-analysis.html">data analysis</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>The Fourth Course in the Data Science Specialization</p>
-                    <a class="btn btn-default btn-xs" href="/coursera-data-science/exploratory-data-analysis/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/coursera-data-science/getting-and-cleaning-data/">Getting and Cleaning Data</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-11T14:30:00-04:00"> Mon 11 April 2016</time>
-    </span>
-
-        <span class="label label-default">Category</span>
-        <a href="/category/coursera-data-science.html">Coursera Data Science</a>
+<div class="highlight"><pre><span></span>##  [1] &quot;Season&quot;      &quot;long&quot;        &quot;Team&quot;        &quot;Season.Type&quot; &quot;GP.x&quot;       
+##  [6] &quot;TOI&quot;         &quot;CF&quot;          &quot;CA&quot;          &quot;CF60&quot;        &quot;CA60&quot;       
+## [11] &quot;CF.&quot;         &quot;CSh.&quot;        &quot;CSv.&quot;        &quot;FF&quot;          &quot;FA&quot;         
+## [16] &quot;FF60&quot;        &quot;FA60&quot;        &quot;FF.&quot;         &quot;FSh.&quot;        &quot;FSv.&quot;       
+## [21] &quot;SF&quot;          &quot;SA.x&quot;        &quot;SF60&quot;        &quot;SA60&quot;        &quot;SF.&quot;        
+## [26] &quot;Sh.&quot;         &quot;Sv.&quot;         &quot;xGF&quot;         &quot;xGA&quot;         &quot;xGF60&quot;      
+## [31] &quot;xGA60&quot;       &quot;xGF.&quot;        &quot;SCF&quot;         &quot;SCA&quot;         &quot;SCF60&quot;      
+## [36] &quot;SCA60&quot;       &quot;SCF.&quot;        &quot;xFSh.&quot;       &quot;xFSv.&quot;       &quot;Adj.FSv.&quot;   
+## [41] &quot;PDO.x&quot;       &quot;xPDO&quot;        &quot;GF.x&quot;        &quot;GA.x&quot;        &quot;GF60&quot;       
+## [46] &quot;GA60&quot;        &quot;GF.&quot;         &quot;FO.&quot;         &quot;PENDIFF&quot;     &quot;Rank&quot;       
+## [51] &quot;AvAge&quot;       &quot;GP.y&quot;        &quot;W&quot;           &quot;L&quot;           &quot;OL&quot;         
+## [56] &quot;PTS&quot;         &quot;PTS.&quot;        &quot;GF.y&quot;        &quot;GA.y&quot;        &quot;SRS&quot;        
+## [61] &quot;SOS&quot;         &quot;TG.G&quot;        &quot;PP&quot;          &quot;PPO&quot;         &quot;PP.&quot;        
+## [66] &quot;PPA&quot;         &quot;PPOA&quot;        &quot;PK.&quot;         &quot;SH&quot;          &quot;SHA&quot;        
+## [71] &quot;S&quot;           &quot;S.&quot;          &quot;SA.y&quot;        &quot;SV.&quot;         &quot;PDO.y&quot;
+</pre></div>
 
 
-<span class="label label-default">Tags</span>
-	<a href="/tags/coursera.html">coursera</a>
-        /
-	<a href="/tags/data-science.html">data science</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>The Third Course in the Data Science Specialization</p>
-                    <a class="btn btn-default btn-xs" href="/coursera-data-science/getting-and-cleaning-data/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/coursera-data-science/r-programming/">R Programming</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-11T14:15:00-04:00"> Mon 11 April 2016</time>
-    </span>
+<h2 id="team-performance-by-season">Team Performance by Season</h2>
+<p>The first thing I decided to look at is each team's performance in each season by the position they finished in, 1-30, variable Rank in the dataset. <em>Please note that in this data, "Winnipeg" refers to the current Winnipeg Jets (seasons 2011-2012 to 2015-2016) and to the Atlanta Thrashers prior to that (seasons 2007-2008 to 2010-2011).</em></p>
+<p><img alt="Pelican" src="/images/NHL_part_1_files/code3-1.png" /></p>
+<p>As can be seen above, the best teams over this period look to have been Boston, Chicago, Los Angeles and Pittsburgh - which makes sense as they are the teams to win the last 8 Stanley Cup Championships. The Detroit Red Wings won in 2007-2008, the first season in this dataset, and have been in decline since. The worst teams over this period have been Carolina, Edmonton, Toronto and Winnipeg.</p>
+<h2 id="team-average-age">Team Average Age</h2>
+<p>The next thing I looked at was the distribution of the average age of each team in each season. In addition, I wanted to see if there was a relationship between the average age of a team and their Points % (points divided by maximum possible points). I have decided to use Points % instead of the number of points earned in a season to account for the shortened season in 2012-2013 where only 48 games were played instead of 82.</p>
+<p><img alt="Pelican" src="/images/NHL_part_1_files/code5-1.png" /></p>
+<p>The average age is represented by the vertical line in the first graph, and is just below 28 years. The distribution is skewed to the right.</p>
+<p>With an <em>R</em><sup>2</sup> value less than 0.05, there is not a strong relationship between a team's average age and the percentage of points earned.</p>
+<h2 id="corsi-and-fenwick-percentage">Corsi and Fenwick Percentage</h2>
+<p>Corsi and Fenwick are some of the most talked about 'advanced stats' in hockey, and are a proxy for puck possession. They are based off of shot attempts, and the formula for each are as follows:</p>
+<p>Corsi = Shot Attempts = Shots + Missed Shots + Blocked Shots</p>
+<p>Fenwick = Shots + Missed Shots</p>
+<p>The idea is that outshooting the other team, and therefore having a higher Corsi or Fenwick percentage, should lead to scoring more goals than the opposition and to more wins.</p>
+<p><img alt="Pelican" src="/images/NHL_part_1_files/code7-1.png" /></p>
+<p>As shown above, the plots for both Corsi and Fenwick look quite similar. Given the <em>R</em><sup>2</sup> values, we can conclude that Fenwick % is slightly more correlated with Points % and winning. Although, a postive correlation exists it is not very strong.</p>
+<p>What if we only use the seasons with a complete 82 game schedule, dismissing the 48 game season as perhaps too small of a sample for Fenwick % to be correlated with Points %.</p>
+<p><img alt="Pelican" src="/images/NHL_part_1_files/code8-1.png" /></p>
+<p>We see a slight increase in the <em>R</em><sup>2</sup> value, but it is still not a strong positive correlation. Therefore, while Corsi and Fenwick % can be considered a factor in the percentage of points a team wins, it is not the only factor that should be looked at when evaluating a team's performance.</p>
+<p><em>The complete R code and data I used can be found in my <a href="https://github.com/7rt2/NHL-data" title="github.com/7rt2/NHL-data">GitHub repository</a>.</em></p>
+            </div>
+            <!-- /.entry-content -->
 
-        <span class="label label-default">Category</span>
-        <a href="/category/coursera-data-science.html">Coursera Data Science</a>
-
-
-<span class="label label-default">Tags</span>
-	<a href="/tags/coursera.html">coursera</a>
-        /
-	<a href="/tags/data-science.html">data science</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>The Second Course in the Data Science Specialization</p>
-                    <a class="btn btn-default btn-xs" href="/coursera-data-science/r-programming/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/coursera-data-science/the-data-scientists-toolbox/">The Data Scientist's Toolbox</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-11T14:00:00-04:00"> Mon 11 April 2016</time>
-    </span>
-
-        <span class="label label-default">Category</span>
-        <a href="/category/coursera-data-science.html">Coursera Data Science</a>
-
-
-<span class="label label-default">Tags</span>
-	<a href="/tags/coursera.html">coursera</a>
-        /
-	<a href="/tags/data-science.html">data science</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>The First Course in the Data Science Specialization</p>
-                    <a class="btn btn-default btn-xs" href="/coursera-data-science/the-data-scientists-toolbox/">more ...</a>
-                </div>
-            </article>
-            <hr/>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -239,6 +169,11 @@
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/sports-analysis/nhl-stats-part-1/">
+                            NHL Stats: Part 1
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="/coursera-data-science/statistical-inference/">
                             Statistical Inference
@@ -257,11 +192,6 @@
                     <li class="list-group-item">
                         <a href="/coursera-data-science/getting-and-cleaning-data/">
                             Getting and Cleaning Data
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/coursera-data-science/r-programming/">
-                            R Programming
                         </a>
                     </li>
                 </ul>

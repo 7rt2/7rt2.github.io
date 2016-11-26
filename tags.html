@@ -56,6 +56,9 @@
                         <li >
                             <a href="/category/coursera-data-science.html">Coursera data science</a>
                         </li>
+                        <li >
+                            <a href="/category/sports-analysis.html">Sports analysis</a>
+                        </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
@@ -91,11 +94,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-data-analysis">data analysis <span class="badge pull-right">3</span></a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-data-analysis">Data analysis <span class="badge pull-right">4</span></a>
                     </h4>
                 </div>
                 <div id="collapse-data-analysis" class="panel-collapse collapse">
                     <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2016-11-24T15:00:00-05:00">Thu 24 November 2016</time></span> <a href="/sports-analysis/nhl-stats-part-1/">NHL Stats: Part 1</a></p>
                         <p><span class="categories-timestamp"><time datetime="2016-07-15T15:00:00-04:00">Fri 15 July 2016</time></span> <a href="/coursera-data-science/statistical-inference/">Statistical Inference</a></p>
                         <p><span class="categories-timestamp"><time datetime="2016-04-11T15:00:00-04:00">Mon 11 April 2016</time></span> <a href="/coursera-data-science/reproducible-research/">Reproducible Research</a></p>
                         <p><span class="categories-timestamp"><time datetime="2016-04-11T14:45:00-04:00">Mon 11 April 2016</time></span> <a href="/coursera-data-science/exploratory-data-analysis/">Exploratory Data Analysis</a></p>
@@ -119,6 +123,30 @@
                     </div>
                 </div>
             </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-nhl">NHL <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-nhl" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2016-11-24T15:00:00-05:00">Thu 24 November 2016</time></span> <a href="/sports-analysis/nhl-stats-part-1/">NHL Stats: Part 1</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-sports">Sports <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-sports" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2016-11-24T15:00:00-05:00">Thu 24 November 2016</time></span> <a href="/sports-analysis/nhl-stats-part-1/">NHL Stats: Part 1</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -130,13 +158,18 @@
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
               <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="http://github.com/7rt2"><i class="fa fa-github-square fa-lg"></i> github</a></li>
-                <li class="list-group-item"><a href="https://ca.linkedin.com/in/richardsthomas"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
+                <li class="list-group-item"><a href="http://github.com/7rt2"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+                <li class="list-group-item"><a href="https://ca.linkedin.com/in/richardsthomas"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
               </ul>
             </li>
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/sports-analysis/nhl-stats-part-1/">
+                            NHL Stats: Part 1
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="/coursera-data-science/statistical-inference/">
                             Statistical Inference
@@ -155,11 +188,6 @@
                     <li class="list-group-item">
                         <a href="/coursera-data-science/getting-and-cleaning-data/">
                             Getting and Cleaning Data
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/coursera-data-science/r-programming/">
-                            R Programming
                         </a>
                     </li>
                 </ul>
@@ -269,6 +297,23 @@
 <!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
 <script src="/theme/js/href_scroll.js"></script>
 
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-87992095-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
 
 </body>
 </html>
